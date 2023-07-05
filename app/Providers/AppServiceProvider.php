@@ -24,6 +24,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $metaTitle = 'Blade Test';
+
+        view()->composer('layouts.app', function ($view) use ($metaTitle) {
+            $view->with('metaTitle', $metaTitle);
+        });
     }
 }
